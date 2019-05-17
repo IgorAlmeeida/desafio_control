@@ -29,7 +29,7 @@ Obs.: Uma ordem de serviço possui apenas um único serviço
 
 | Campo           | Tipo     | Obrigatório | Observação |
 | -------- |--------- |------- |------- |
-| serviço         | Serviço  | Sim         | Serviço executado na orde de serviço abela que agrupe |
+| serviço         | Serviço  | Sim         | Serviço executado na ordem de serviço |
 | quantidade      | Numérico | Sim         | Quantidade do serviço executado. Mínimo 1 |
 | nomeFuncionario | Texto    | Sim         | Nome do funcionário que executou a ordem de serviço |
 | data            | Data     | Sim         | Data da execução da ordem de serviço |
