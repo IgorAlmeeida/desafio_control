@@ -64,6 +64,7 @@ Exemplo tabela:
 * Criação e edição de ordem de serviço
 * Exclusão de ordem de serviço
 * Exibição do relatório de contabilização dos serviços
+* Testes automatizados
 * Elaborar um manual de execução da aplicação
 
 
@@ -77,7 +78,7 @@ Exemplo tabela:
 
 1. Faça o fork do desafio;
 2. Crie um repositório privado no bitbucket para o projeto e adicione como colaborador o usuário sistemas_control;
-3. Desenvolva. Você terá até 7 (sete) dias a partir da data do envio do desafio; 
+3. Desenvolva no prazo combinado;
 4. Após concluir seu trabalho faça um push; 
 5. Responda ao e-mail enviado do desafio, adicionando cópia para sistemas@control.eng.br notificando a finalização do desafio para validação.
 
