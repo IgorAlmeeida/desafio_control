@@ -2,7 +2,7 @@
 Olá, queremos convidá-lo a participar de nosso desafio de seleção. Pronto para participar? Seu trabalho será visto por nosso time e você receberá ao final um feedback sobre o que achamos do seu trabalho. Não é legal?
 
 ## Sobre a Oportunidade
-A vaga é para Analista de Sistemas, se você for aprovado nesta etapa, será convidado para uma entrevista com nosso time de especialistas. Orientações:
+A vaga é para Analista de Sistemas/Programador, se você for aprovado nesta etapa, será convidado para uma entrevista com nosso time de especialistas. Orientações:
 
 * Você pode utilizar alguma das seguintes linguagens (Ruby on Rails, PHP, Python ou Java);
 * Você pode utilizar algum dos seguintes bancos de dados (SQLite, PostgreSQL, MySQL)
