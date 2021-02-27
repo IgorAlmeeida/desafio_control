@@ -22,8 +22,8 @@ class ServiceOrderFactory extends Factory
     public function definition()
     {
         $service =  self::factoryForModel('Service')->create();
-        $horaFim = $this->faker->time('H:i:s','now');
-        $horaInicio = $this->faker->time('H:i:s',$horaFim);
+        $horaFim = $this->faker->time('H:i', '23:59:00');
+        $horaInicio = $this->faker->time('H:i',$horaFim.':00');
 
         return [
             'service_id' => $service->id,

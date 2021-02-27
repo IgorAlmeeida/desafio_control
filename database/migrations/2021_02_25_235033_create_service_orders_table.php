@@ -22,7 +22,7 @@ class CreateServiceOrdersTable extends Migration
             $table->date('data')->nullable(false);
             $table->time('hora_inicio')->nullable(false);
             $table->time('hora_fim')->nullable(false);
-            $table->string('detalhes')->nullable(true);
+            $table->string('detalhes', 1000)->nullable(true);
         });
     }
 
