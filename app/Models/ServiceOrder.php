@@ -38,4 +38,8 @@ class ServiceOrder extends Model
         'detalhes.*' =>'Por favor, descreva com mais detalhes o serviço.'
     ];
 
+    public function service(){
+        return $this->belongsTo('App\Models\Service');
+    }
+
 }

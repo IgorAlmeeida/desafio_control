@@ -21,4 +21,8 @@ class Service extends Model
         'descricao.*' => 'A descrição é obrigatória',
         'valor.*' => 'O valor é obrigatório e deve ser numérico'
     ];
+
+    public function serviceOrders(){
+        return $this->hasMany('App\Models\ServiceOrder');
+    }
 }
