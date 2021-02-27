@@ -10,4 +10,15 @@ class Service extends Model
 {
     use HasFactory;
     use SoftDeletes;
+
+    protected $fillable = ['descricao', 'valor'];
+
+    public static $rules = [
+        'descricao' => 'required',
+        'valor' => 'required|numeric',
+    ];
+    public static $messages = [
+        'descricao.*' => 'A descrição é obrigatória',
+        'valor.*' => 'O valor é obrigatório e deve ser numérico'
+    ];
 }
