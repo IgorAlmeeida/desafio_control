@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SIAS- Register</title>
+    <title>Control Sistemas</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -51,7 +51,7 @@
 
                             <div class="form-group row">
                                 <div class="col-md-12">
-                                    <label for="name" class="text-md-right">Nome</label>
+                                    <label for="name" class="text-md-right">Nome:</label>
                                     <input id="name" type="name" class="form-control form-control-user @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name">
 
                                     @error('name')
@@ -64,7 +64,7 @@
 
                             <div class="form-group row">
                                 <div class="col-md-12">
-                                    <label for="email" class="text-md-right">Email</label>
+                                    <label for="email" class="text-md-right">Email:</label>
                                     <input id="email" type="email" class="form-control form-control-user @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
 
                                     @error('email')
@@ -77,7 +77,7 @@
 
                             <div class="form-group row">
                                 <div class="col-md-12">
-                                    <label for="password" class="text-md-right">Senha</label>
+                                    <label for="password" class="text-md-right">Senha:</label>
                                     <input id="password" type="password" class="form-control form-control-user @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
 
                                     @error('password')
@@ -90,7 +90,7 @@
 
                             <div class="form-group row">
                                 <div class="col-md-12">
-                                    <label for="password-confirm" class="text-md-right">Confirmar Senha</label>
+                                    <label for="password-confirm" class="text-md-right">Confirmar Senha:</label>
                                     <input id="password-confirm" type="password" class="form-control form-control-user" name="password_confirmation" required autocomplete="new-password">
                                 </div>
                             </div>
