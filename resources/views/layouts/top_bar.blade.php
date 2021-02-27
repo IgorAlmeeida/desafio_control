@@ -17,8 +17,8 @@
                        Serviços
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="">
-                        <a class="dropdown-item" href="">Listar</a>
-                        <a class="dropdown-item" href="">Adicionar</a>
+                        <a class="dropdown-item" href="{{route('listService')}}">Listar</a>
+                        <a class="dropdown-item" href="{{route('createServiceView')}}">Adicionar</a>
                     </div>
                 </div>
             </li>
@@ -30,8 +30,8 @@
                         Ordens de Serviços
                     </button>
                     <div class="dropdown-menu dropdown-menu" aria-labelledby="dropdownMenuButton" style="">
-                        <a class="dropdown-item" href="">Listar</a>
-                        <a class="dropdown-item" href="">Adicionar</a>
+                        <a class="dropdown-item" href="{{route('listServiceOrder')}}">Listar</a>
+                        <a class="dropdown-item" href="{{route('createServiceOrderView')}}">Adicionar</a>
                     </div>
                 </div>
             </li>

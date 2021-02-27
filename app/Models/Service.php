@@ -14,7 +14,7 @@ class Service extends Model
     protected $fillable = ['descricao', 'valor'];
 
     public static $rules = [
-        'descricao' => 'required',
+        'descricao' => 'required|min:3',
         'valor' => 'required|numeric',
     ];
     public static $messages = [

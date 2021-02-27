@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -34,12 +33,14 @@
         <!-- Main Content -->
         <div id="content">
 
-            @include('layouts.top_bar')
-
             <!-- Begin Page Content -->
-            <div class="container-fluid">
+            <div class="container-fluid mt-5 ">
 
-                @yield('main')
+                <div class="text-center">
+                    <div class="error mx-auto" data-text="@yield('code')">@yield('code')</div>
+                    <p class="lead text-gray-800 mb-5">@yield('message')</p>
+                    <a href="{{route('home')}}">&larr; Voltar para o início</a>
+                </div>
 
             </div>
             <!-- /.container-fluid -->
@@ -48,7 +49,6 @@
         <!-- End of Main Content -->
 
         @include('layouts.footer')
-
 
 
     </div>
@@ -62,35 +62,9 @@
     <i class="fas fa-angle-up"></i>
 </a>
 
-<!-- Logout Modal-->
-<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-     aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Deseja realizar login?</h5>
-                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <div class="modal-footer">
-                <form action="{{ route('logout') }}" method="post">
-                    @csrf
-                    <button class="btn btn-danger" type="submit">Sim</button>
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Não</button>
-                </form>
-
-            </div>
-        </div>
-    </div>
-</div>
-
 <!-- Bootstrap core JavaScript-->
 <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
 <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-
-@yield('js')
-
 
 <!-- Core plugin JavaScript-->
 <script src="{{ asset('vendor/jquery-easing/jquery.easing.min.js') }}"></script>
