@@ -22,7 +22,7 @@ class ServiceOrder extends Model
     public static $rules = [
         'service_id' => 'required',
         'quantidade' => 'required|numeric',
-        'nome_func' => 'required',
+        'nome_func' => 'required|min:5',
         'data' => 'required|date',
         'hora_inicio' => 'required',
         'hora_fim' => 'required',

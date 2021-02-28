@@ -23,7 +23,7 @@
                     </div>
                     <div class="col-12 col-md-6">
                         <label>Valor: </label>
-                        <input type="number" class="form-control"  name="valor" @error('inicio_inscricao') is-invalid @enderror value ="{{ old('valor') ?? $service->valor ??'default'}}" required autofocus><br>
+                        <input type="text" class="form-control" id="valor"  name="valor" @error('valor') is-invalid @enderror value ="{{ old('valor') ?? $service->valor ??'default'}}" required autofocus><br>
                         @error('valor')
                         <span class="invalid-feedback d-block" role="alert">
                                 <strong>{{$message}}</strong><br>
@@ -38,4 +38,23 @@
 
         </div>
     </div>
+@endsection
+
+@section('js')
+    <script src="{{asset('js/mask.js')}}"></script>
+    <script>
+        $('#valor').inputmask('decimal', {
+            'removeMaskOnSubmit': true,
+            'alias': 'numeric',
+            'groupSeparator': ',',
+            'autoGroup': true,
+            'digits': 2,
+            'radixPoint': ".",
+            'digitsOptional': false,
+            'allowMinus': false,
+            'prefix': 'R$ ',
+            'placeholder': '00.00'
+        });
+
+    </script>
 @endsection
