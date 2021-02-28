@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Constantes\Constantes;
 use App\Models\Service;
 use App\Models\ServiceOrder;
 use App\Validator\ServiceOrderValidator;
@@ -18,13 +19,21 @@ class ServiceOrderController extends Controller
     public function create(Request $request){
         try {
             ServiceOrderValidator::validate($request->all());
-            $serviceOrder = new ServiceOrder($request->all());
-            $serviceOrder->save();
-            return redirect('/service_order');
+            try {
+                $serviceOrder = new ServiceOrder($request->all());
+                $serviceOrder->save();
+
+                return redirect('/service_order')
+                    ->with('mensagem', Constantes::SUCESSO_CREATE_ORDER_SERVICE);
+
+            } catch (\Exception $exception){
+                return redirect('/service_order/create')
+                    ->with('mensagem', Constantes::ERROR_CREATE_ORDER_SERVICE);
+            }
+
         }catch (ValidationException $ve){
-            $services = Service::all();
             return redirect('/service_order/create')
-                ->with(['services'=> $services])
+                ->with('mensagem', Constantes::ERROR_CREATE_ORDER_SERVICE)
                 ->withErrors($ve->getValidator())
                 ->withInput();
         }
@@ -38,29 +47,45 @@ class ServiceOrderController extends Controller
     public function update(Request $request){
         try {
             ServiceOrderValidator::validate($request->all());
-            $serviceOrder = ServiceOrder::find($request->idServiceOrder);
-            $serviceOrder->quantidade = $request->quantidade;
-            $serviceOrder->nome_func = $request->nome_func;
-            $serviceOrder->data = $request->data;
-            $serviceOrder->hora_inicio = $request->hora_inicio;
-            $serviceOrder->hora_fim = $request->hora_fim;
-            $serviceOrder->detalhes = $request->detalhes;
-            $serviceOrder->service_id = $request->service_id;
-            $serviceOrder->update();
-            return redirect('/service_order');
+            try {
+                $serviceOrder = ServiceOrder::find($request->idServiceOrder);
+                $serviceOrder->quantidade = $request->quantidade;
+                $serviceOrder->nome_func = $request->nome_func;
+                $serviceOrder->data = $request->data;
+                $serviceOrder->hora_inicio = $request->hora_inicio;
+                $serviceOrder->hora_fim = $request->hora_fim;
+                $serviceOrder->detalhes = $request->detalhes;
+                $serviceOrder->service_id = $request->service_id;
+                $serviceOrder->update();
+
+                return redirect('/service_order')
+                    ->with('mensagem', Constantes::SUCESSO_UPDATE_ORDER_SERVICE);
+
+            }catch (\Exception $exception){
+                return redirect('/service_order/update/'.$request->idServiceOrder)
+                    ->with('mensagem', Constantes::ERROR_UPDATE_ORDER_SERVICE);
+            }
+
         }catch (ValidationException $ve){
-            $services = Service::all();
             return redirect('/service_order/update/'.$request->idServiceOrder)
-                ->with(['services'=> $services])
+                ->with('mensagem', Constantes::ERROR_UPDATE_ORDER_SERVICE)
                 ->withErrors($ve->getValidator())
                 ->withInput();
         }
     }
 
     public function delete(Request $request){
-        $serciveOrder = ServiceOrder::find($request->idServiceOrder);
-        $serciveOrder->delete();
-        return redirect('/service_order');
+        try {
+            $serciveOrder = ServiceOrder::find($request->idServiceOrder);
+            if ($serciveOrder == null){
+                throw new \Exception(Constantes::ERROR_DELETE_ORDER_SERVICE);
+            }
+            $serciveOrder->delete();
+            return redirect('/service_order')->with('mensagem', Constantes::SUCESSO_DELETE_ORDER_SERVICE);
+        } catch (\Exception $exception){
+            return redirect('/service_order')->with('mensagem', Constantes::ERROR_DELETE_ORDER_SERVICE);
+        }
+
     }
 
     public function list(Request $request){

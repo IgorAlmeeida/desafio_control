@@ -40,6 +40,12 @@
     </div>
 @endsection
 
+@section('modal')
+    @if(session('mensagem'))
+        @include('layouts.modalMensagem')
+    @endif
+@endsection
+
 @section('js')
     <script src="{{asset('js/mask.js')}}"></script>
     <script>
@@ -57,4 +63,10 @@
         });
 
     </script>
+
+    @if(session('mensagem'))
+        <script>
+            $('#mensagemModal').modal('show');
+        </script>
+    @endif
 @endsection

@@ -95,6 +95,19 @@
     </div>
 @endsection
 
+@section('modal')
+    @include('layouts.modalDelete')
+
+    @if(session('mensagem'))
+        @include('layouts.modalMensagem')
+    @endif
+@endsection
+
 @section('js')
 
+    @if(session('mensagem'))
+        <script>
+            $('#mensagemModal').modal('show');
+        </script>
+    @endif
 @endsection
