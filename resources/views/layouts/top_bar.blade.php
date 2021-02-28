@@ -35,6 +35,11 @@
                     </div>
                 </div>
             </li>
+        <li class="nav-item mx-1 ml-3 mt-3">
+                <a class="btn btn-light" href="{{route('report')}}" type="button">
+                    Relatório
+                </a>
+        </li>
 
 
     </ul>

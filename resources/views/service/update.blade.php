@@ -14,7 +14,7 @@
                     <input type="hidden" name="idService" value="{{$service->id}}">
                     <div class="col-12 col-md-6">
                         <label>Descricao: </label>
-                        <input type="text" value="{{$service->descricao}}" class="form-control" name="descricao" @error('descricao') is-invalid @enderror value ="{{ old('descricao')}}" required autofocus><br>
+                        <input type="text" class="form-control" name="descricao" @error('descricao') is-invalid @enderror value ="{{ old('descricao') ?? $service->descricao ?? 'default' }}" required autofocus><br>
                         @error('descricao')
                         <span class="invalid-feedback d-block" role="alert">
                                 <strong>{{$message}}</strong><br>
@@ -23,7 +23,7 @@
                     </div>
                     <div class="col-12 col-md-6">
                         <label>Valor: </label>
-                        <input type="number" value="{{$service->valor}}" class="form-control"  name="valor" @error('inicio_inscricao') is-invalid @enderror value ="{{ old('valor')}}" required autofocus><br>
+                        <input type="number" class="form-control"  name="valor" @error('inicio_inscricao') is-invalid @enderror value ="{{ old('valor') ?? $service->valor ??'default'}}" required autofocus><br>
                         @error('valor')
                         <span class="invalid-feedback d-block" role="alert">
                                 <strong>{{$message}}</strong><br>

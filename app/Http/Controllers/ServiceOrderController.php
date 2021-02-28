@@ -71,4 +71,26 @@ class ServiceOrderController extends Controller
         }
         return view('serviceOrder.list', ['serviceOrders' => $serviceOrders]);
     }
+
+    public function generateReport(Request $request){
+        $serviceOrder = ServiceOrder::all();
+        $totalSerDesc = 0;
+        $totalFinal = 0;
+
+        foreach ($serviceOrder as $so){
+            $so->valorTotal = $so->service->valor * $so->quantidade;
+            $totalSerDesc += $so->valorTotal;
+            $so->desconto = $so->getDesconto();
+            $so->valorFinal = $so->valorTotal - ($so->valorTotal * $so->desconto);
+            $totalFinal += $so->valorFinal;
+        }
+
+        return view('serviceOrder.report',
+            [
+                'serviceOrders' => $serviceOrder,
+                'totalSerDesc' => $totalSerDesc,
+                'totalFinal' => $totalFinal
+            ]
+        );
+    }
 }

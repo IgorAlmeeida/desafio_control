@@ -23,7 +23,7 @@ class ServiceFactory extends Factory
     {
         return [
             'descricao' => $this->faker->jobTitle(),
-            'valor' => $this->faker->randomFloat(2,0,9999999999999),
+            'valor' => $this->faker->randomFloat(2,1,1000),
         ];
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Service;
+use App\Models\ServiceOrder;
 use App\Validator\ServiceValidator;
 use App\Validator\ValidationException;
 use Illuminate\Http\Request;
@@ -57,4 +58,6 @@ class ServiceController extends Controller
         $services = Service::all();
         return view('service.list', ['services' => $services]);
     }
+
+
 }

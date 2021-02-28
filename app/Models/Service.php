@@ -25,4 +25,5 @@ class Service extends Model
     public function serviceOrders(){
         return $this->hasMany('App\Models\ServiceOrder');
     }
+
 }

@@ -77,5 +77,9 @@ Route::get('/service_order/delete/{idServiceOrder}', [ServiceOrderController::cl
     ->name('deleteServiceOrder')
     ->middleware('auth');
 
+Route::get('/report', [ServiceOrderController::class, 'generateReport'])
+    ->name('report')
+    ->middleware('auth');
+
 
 

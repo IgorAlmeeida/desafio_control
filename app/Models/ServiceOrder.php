@@ -42,4 +42,19 @@ class ServiceOrder extends Model
         return $this->belongsTo('App\Models\Service');
     }
 
+    public function getDesconto(){
+        if($this->quantidade >= 10 && $this->quantidade < 20){
+            return 0.1;
+        }
+        else if ($this->quantidade >= 20 && $this->quantidade < 30){
+            return 0.2;
+        }
+        else if ($this->quantidade >= 30){
+            return 0.3;
+        }
+        else {
+            return 1;
+        }
+    }
+
 }

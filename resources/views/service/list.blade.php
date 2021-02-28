@@ -13,8 +13,6 @@
                     <a class="float-right btn btn-primary" href="{{route('createServiceView')}}"><i class="fa fa-plus"></i></a>
                 </div>
             </div>
-
-
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -30,7 +28,7 @@
                     @foreach($services as $s)
                         <tr>
                             <td>{{$s->descricao}}</td>
-                            <td>{{$s->valor}}</td>
+                            <td>@money($s->valor)</td>
                             <td class="text-center">
                                 <div class="btn-group">
                                     <a class="btn btn-warning" href="{{route('updateServiceView', ['idService'=>$s->id])}}"><i class="fa fa-pen"></i></a>
