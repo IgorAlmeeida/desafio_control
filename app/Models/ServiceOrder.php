@@ -39,7 +39,7 @@ class ServiceOrder extends Model
     ];
 
     public function service(){
-        return $this->belongsTo('App\Models\Service');
+        return $this->belongsTo('App\Models\Service')->withTrashed();
     }
 
     public function getDesconto(){

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ServiceOrderController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\ProfileController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -80,6 +81,17 @@ Route::get('/service_order/delete/{idServiceOrder}', [ServiceOrderController::cl
 Route::get('/report', [ServiceOrderController::class, 'generateReport'])
     ->name('report')
     ->middleware('auth');
+
+//-----------------------------------------------------------------------------------------------------
+
+Route::get('/profile',[ProfileController::class, 'updateViewProfile'])
+    ->name('profileUpdateView')
+    ->middleware('auth');
+
+Route::post('/profile',[ProfileController::class, 'updateProfile'])
+    ->name('profileUpdate')
+    ->middleware('auth');
+
 
 
 

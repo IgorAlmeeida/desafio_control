@@ -66,7 +66,11 @@
                  aria-labelledby="userDropdown">
                 @if (Route::has('login'))
                     <div class="hidden fixed top-0 right-0 px-6 sm:block">
-                        @auth
+                    @auth
+                            <a class="dropdown-item" href="{{route('profileUpdateView')}}">
+                                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                Perfil
+                            </a>
                             <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                 Logout
