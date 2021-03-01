@@ -124,6 +124,4 @@ class ServiceOrderTest extends TestCase
         $this->assertTrue($servirceOrder->getDesconto() == 0.3);
     }
 
-
-
 }
