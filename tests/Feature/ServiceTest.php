@@ -20,13 +20,6 @@ class ServiceTest extends TestCase
      * @return void
      */
 
-    public function test_example()
-    {
-        $response = $this->get('/');
-
-        $response->assertLocation('/login');
-    }
-
     public function testListService(){
         $user = User::factory()->create();
 

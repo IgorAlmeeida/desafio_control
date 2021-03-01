@@ -28,7 +28,7 @@ class ServiceOrderFactory extends Factory
         return [
             'service_id' => $service->id,
             'quantidade' => $this->faker->numberBetween(1,50),
-            'nome_func' => $this->faker->firstName,
+            'nome_func' => $this->faker->firstName. ' '.$this->faker->lastName,
             'data' => $this->faker->date(),
             'hora_inicio' => $horaInicio,
             'hora_fim' => $horaFim,
