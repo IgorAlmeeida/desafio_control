@@ -7,7 +7,7 @@
             <h3 class="h3 mb-0 text-gray-800">Adicionar Serviço</h3>
         </div>
         <div class="card-body">
-            <form method="post" action="">
+            <form method="post">
                 @csrf
                 <div class="row">
                     <div class="col-12 col-md-6">
